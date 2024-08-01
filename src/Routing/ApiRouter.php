@@ -91,23 +91,23 @@ class ApiRouter extends Router
                 $route->prefix($prefix);
             }
 
-            $routes->add($route);
+            // $routes->add($route);
 
-            // Options route
-            $route = $this->createRoute(['OPTIONS'], $uri, function () {
-                return [];
-            });
+            // // Options route
+            // $route = $this->createRoute(['OPTIONS'], $uri, function () {
+            //     return [];
+            // });
 
-            $route->middleware(ApiMiddleware::class);
+            // $route->middleware(ApiMiddleware::class);
 
-            if ($version !== null) {
-                $route->prefix($version);
-                $route->name("." . $version);
-            }
+            // if ($version !== null) {
+            //     $route->prefix($version);
+            //     $route->name("." . $version);
+            // }
 
-            if (!empty($prefix)) {
-                $route->prefix($prefix);
-            }
+            // if (!empty($prefix)) {
+            //     $route->prefix($prefix);
+            // }
 
             $routes->add($route);
         }
